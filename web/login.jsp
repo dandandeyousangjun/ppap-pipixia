@@ -63,29 +63,31 @@
   display: -ms-flexbox;
   display: flex;
         }
+        
+        body{
+		background-image: url('pic/img014.jpg');
+		background-repeat: repeat-x;
+	}
   </style>
   
   <body>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 text-center">
-                <h2>LogIn</h2>
-            </div>
         </div>
         <div class="row">
             <div id="alert1"  class="alert alert-success fade in text-center col-xs-2 col-xs-offset-5 hide">
-                <strong>RegisterSuccess</strong>
+                <strong>注册成功！</strong>
             </div>
         </div>
         <form id="form" class="form-horizontal" role="form" style="margin-top: 73px;">
           <div class="form-group"  >
-            <label for="username" class="col-xs-2 control-label col-sm-offset-3" >Username</label>
+            <label for="username" class="col-xs-2 control-label col-sm-offset-3" >用户名</label>
             <div class="col-xs-2">
               <input type="text" class="form-control" id="username" rel="tooltip"/>
             </div>
           </div>
           <div class="form-group">
-            <label for="password" class="col-xs-2 control-label col-sm-offset-3">Password</label>
+            <label for="password" class="col-xs-2 control-label col-sm-offset-3">密码</label>
             <div class="col-xs-2">
               <input type="password" class="form-control" id="password"/>
             </div>
@@ -107,24 +109,24 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title" id="myModalLabel">UserRegister</h4>
+            <h4 class="modal-title" id="myModalLabel">注册界面</h4>
           </div>
           <div class="modal-body">
               <form class="form-horizontal" role="form">
               <div class="form-group"  >
-                <label for="reg_username" class="col-xs-2 control-label" >Username</label>
+                <label for="reg_username" class="col-xs-2 control-label" >用户名</label>
                 <div class="col-xs-4">
                   <input type="text" class="form-control" id="reg_username"/>
                 </div>
               </div>
               <div class="form-group">
-                <label for="reg_password" class="col-xs-2 control-label">Password</label>
+                <label for="reg_password" class="col-xs-2 control-label">密码</label>
                 <div class="col-xs-4">
                   <input type="password" class="form-control" id="reg_password"/>
                 </div>
               </div>
               <div class="form-group">
-                <label for="reg_repassword" class="col-xs-2 control-label">Reinput</label>
+                <label for="reg_repassword" class="col-xs-2 control-label">再输一遍</label>
                 <div class="col-xs-4">
                   <input type="password" class="form-control" id="reg_repassword"/>
                 </div>
@@ -132,8 +134,8 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary" id="register">Register</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary" id="register">注册</button>
           </div>
         </div>
       </div>
@@ -154,15 +156,15 @@
                 },
                 function(data, status) {
                     if (data == '1') {
-                        createPopOver('#username', 'right', 'Username can not be empty ', 'show');
+                        createPopOver('#username', 'right', '用户名不能为空 ', 'show');
                     } else if (data == '2') {
-                        createPopOver('#password', 'right', ' password can not be empty', 'show');
+                        createPopOver('#password', 'right', '密码不能为空', 'show');
                     } else if (data == '3') {
-                        createPopOver('#username', 'right', ' Username does not exist', 'show');
+                        createPopOver('#username', 'right', ' 用户名不存在', 'show');
                     } else if (data == '4') {
-                        createPopOver('#password', 'right', ' wrong password', 'show');
+                        createPopOver('#password', 'right', '密码错误', 'show');
                     } else if (data == 5) {
-                        location.href = "SongJSon.html";
+                        location.href = "list.jsp";
                     }
                 });
             });
@@ -178,15 +180,15 @@
                 },
                 function(data, status) {
                     if (data == '1') {
-                        createPopOver('#reg_username', 'right', 'not null', 'show');
+                        createPopOver('#reg_username', 'right', '不能为空', 'show');
                     } else if (data == '2') {
-                        createPopOver('#reg_password', 'right', 'not null', 'show');
+                        createPopOver('#reg_password', 'right', '不能为空', 'show');
                     } else if (data == '3') {
-                        createPopOver('#reg_repassword', 'right', 'not null', 'show');
+                        createPopOver('#reg_repassword', 'right', '不能为空', 'show');
                     } else if (data == '4') {
-                        createPopOver('#reg_repassword', 'right', 'Passwords do not match', 'show');
+                        createPopOver('#reg_repassword', 'right', '密码不匹配', 'show');
                     } else if (data == '5') {
-                        createPopOver('#reg_username', 'right', 'Username already exists', 'show');
+                        createPopOver('#reg_username', 'right', '用户名存在', 'show');
                     } else if (data == '6') {
                         $('#reg_username').val('');
                         $('#reg_password').val('');

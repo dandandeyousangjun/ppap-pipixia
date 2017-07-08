@@ -43,7 +43,7 @@
         }
 
 	body{
-		background-image: url('img001.jpg');
+		background-image: url('pic/img001.jpg');
 		background-repeat: repeat-x;
 	}
         
@@ -58,7 +58,7 @@
               <h2>  </h2>
             </div>
       <div style="margin:0 auto;width:80%;" >
-      <img src="1.jpg" />
+      <img src="pic/1.jpg" />
     </div>
  <p></p>
 <br />
@@ -80,7 +80,7 @@
 	$(function(){
 		var i = 1;
 		setInterval(function(){
-			$('img').attr('src',i+'.jpg');
+			$('img').attr('src','pic/'+i+'.jpg');
 			++i;
 			if(i>5){
 				i=1;

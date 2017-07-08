@@ -29,7 +29,7 @@ public class UserService {
             return null;
         } else {
             Object[] objects = users.get(0);
-            return objects == null ? null : new User(Integer.parseInt(objects[0].toString()), objects[1].toString(), objects[2].toString(), null);
+            return objects == null ? null : new User(Integer.parseInt(objects[0].toString()), objects[1].toString(), objects[2].toString());
         }
     }
 
